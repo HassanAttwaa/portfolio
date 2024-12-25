@@ -167,6 +167,7 @@ section {
 
 
 /* Certificates Section */
+/* Certificates Section */
 .certificates {
     background-color: #000016;
     padding: 100px 50px;
@@ -187,34 +188,34 @@ section {
     overflow: hidden;
     border-radius: 10px;
     transition: 0.9s ease;
-    /* Let the content determine the size */
-    flex-grow: 0;
-    flex-shrink: 0;
 }
 
-/* Control the number of cards per row */
-.certificates .content::after {
-    content: '';
-    flex: auto;
-    max-width: calc(20% - 16px); /* Same as card width for first row */
+/* Force line breaks after specific cards using pseudo-elements */
+.certificates .content .card-img:nth-child(5)::after,
+.certificates .content .card-img:nth-child(9)::after {
+    content: "";
+    flex-basis: 100%;
+    width: 0;
 }
 
 /* First row - 5 cards */
-.card-img:nth-child(-n+5) {
-    flex-basis: calc(20% - 16px);
-    max-width: calc(20% - 16px);
+.certificates .content .card-img:nth-child(-n+5) {
+    width: calc(20% - 16px);
 }
 
 /* Second row - 4 cards */
-.card-img:nth-child(n+6):nth-child(-n+9) {
-    flex-basis: calc(25% - 15px);
-    max-width: calc(25% - 15px);
+.certificates .content .card-img:nth-child(n+6):nth-child(-n+9) {
+    width: calc(25% - 16px);
 }
 
 /* Third row - 3 cards */
-.card-img:nth-child(n+10):nth-child(-n+12) {
-    flex-basis: calc(33.333% - 14px);
-    max-width: calc(33.333% - 14px);
+.certificates .content .card-img:nth-child(n+10):nth-child(-n+12) {
+    width: calc(33.33% - 16px);
+}
+
+/* Hide any additional cards */
+.certificates .content .card-img:nth-child(n+13) {
+    display: none;
 }
 
 .card-img:hover {
@@ -226,7 +227,6 @@ section {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: contain; /* Maintain image aspect ratio */
 }
 
 .card-img-info {
@@ -235,49 +235,34 @@ section {
     font-weight: 600;
 }
 
-.img-category {
-    font-size: 10px;
-    color: #000;
-    font-weight: 500;
-    text-decoration: underline;
-}
-
-/* Responsive design */
-@media (max-width: 1200px) {
+/* Responsive styles */
+@media (max-width: 1024px) {
     .certificates {
         padding: 100px 30px;
     }
-
-    .card-img:nth-child(-n+5),
-    .card-img:nth-child(n+6):nth-child(-n+9),
-    .card-img:nth-child(n+10):nth-child(-n+12) {
-        flex-basis: calc(33.333% - 14px);
-        max-width: calc(33.333% - 14px);
+    
+    .certificates .content .card-img:nth-child(-n+5),
+    .certificates .content .card-img:nth-child(n+6):nth-child(-n+9),
+    .certificates .content .card-img:nth-child(n+10):nth-child(-n+12) {
+        width: calc(33.33% - 16px);
     }
 }
 
 @media (max-width: 768px) {
-    .certificates {
-        padding: 100px 20px;
-    }
-
-    .card-img:nth-child(-n+5),
-    .card-img:nth-child(n+6):nth-child(-n+9),
-    .card-img:nth-child(n+10):nth-child(-n+12) {
-        flex-basis: calc(50% - 10px);
-        max-width: calc(50% - 10px);
+    .certificates .content .card-img:nth-child(-n+5),
+    .certificates .content .card-img:nth-child(n+6):nth-child(-n+9),
+    .certificates .content .card-img:nth-child(n+10):nth-child(-n+12) {
+        width: calc(50% - 10px);
     }
 }
 
 @media (max-width: 480px) {
-    .card-img:nth-child(-n+5),
-    .card-img:nth-child(n+6):nth-child(-n+9),
-    .card-img:nth-child(n+10):nth-child(-n+12) {
-        flex-basis: 100%;
-        max-width: 100%;
+    .certificates .content .card-img:nth-child(-n+5),
+    .certificates .content .card-img:nth-child(n+6):nth-child(-n+9),
+    .certificates .content .card-img:nth-child(n+10):nth-child(-n+12) {
+        width: 100%;
     }
 }
-
 
 
 /* Contact Section */
