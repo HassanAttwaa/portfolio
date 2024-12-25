@@ -165,6 +165,7 @@ section {
 }
 
 /* Certificates Section */
+/* Certificates Section */
 .certificates {
     background-color: #000016;
 }
@@ -178,22 +179,31 @@ section {
     margin: 30px auto;
 }
 
+/* First row - 5 cards */
+.card-img:nth-child(-n+5) {
+    flex: 0 0 calc(20% - 16px);
+    max-width: calc(20% - 16px);
+}
+
+/* Second row - 4 cards */
+.card-img:nth-child(n+6):nth-child(-n+9) {
+    flex: 0 0 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+}
+
+/* Third row - 3 cards */
+.card-img:nth-child(n+10):nth-child(-n+12) {
+    flex: 0 0 calc(33.333% - 14px);
+    max-width: calc(33.333% - 14px);
+}
+
 .card-img {
     background-color: #fff;
     border: 1px solid #fff;
-    width: calc(20% - 16px);
     min-width: 200px;
     overflow: hidden;
     border-radius: 10px;
     transition: 0.9s ease;
-}
-
-.card-img:nth-child(n+6):nth-child(-n+9) {
-    width: calc(25% - 15px);
-}
-
-.card-img:nth-child(n+10) {
-    width: calc(33.333% - 14px);
 }
 
 .card-img:hover {
@@ -219,6 +229,26 @@ section {
     font-weight: 500;
     text-decoration: underline;
 }
+
+/* Update responsive styles for certificates */
+@media (max-width: 1023px) {
+    .card-img:nth-child(-n+5),
+    .card-img:nth-child(n+6):nth-child(-n+9),
+    .card-img:nth-child(n+10):nth-child(-n+12) {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 641px) {
+    .card-img:nth-child(-n+5),
+    .card-img:nth-child(n+6):nth-child(-n+9),
+    .card-img:nth-child(n+10):nth-child(-n+12) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 
 /* Contact Section */
 .fcontent {
