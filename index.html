@@ -6,11 +6,28 @@
     <meta name="google-site-verification" content="HAqUscx1_dAiRy81WFOuY-nj4QHVU3_kyhS8hiMFyXg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Add your EmailJS public key here
+        })();
+    </script>
     <title>Hassan Attwa</title>
 </head>
 
 <body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+        <em>Dark Mode</em>
+    </div>
+
+    <div class="progress-bar"></div>
+
     <header>
         <a href="#" class="logo">Hassan Attwa</a>
         <nav class="nav">
@@ -18,75 +35,86 @@
             <a href="#Certificates">Certificates</a>
             <a href="#contacts">Contacts</a>
         </nav>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
 
-
     <section class="main">
-        <h2>Hello, I'm Hassan<br><span>Project Manager</span></h2>
-        <h3>Team leader and Business development ,.. </h3>
-        <a href="#career" class="mywork-btn">View my works</a>
-        <a href="./cv/CV.pdf " target="blank" class="cv-btn">Download my CV</a>
-        <div class="social-icons">
-            <a href="http://linkedin.com/in/hassan-attwa-38908550" target="blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/hassan.abdelalim1" target="blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://mobile.twitter.com/hassanattwa" target="blank"><i class="fab fa-twitter-square"></i></a>
-            <a href="https://instagram.com/7assan_3ttwa?r=nametag" target="blank"><i class="fab fa-instagram-square"></i></a>
+        <div class="main-content">
+            <h2 class="typing-text">Hello, I'm Hassan</h2>
+            <h2><span>Project Manager</span></h2>
+            <h3>Team leader and Business development</h3>
+            <div class="cta-buttons">
+                <a href="#career" class="mywork-btn">View my works</a>
+                <a href="./cv/CV.pdf" target="blank" class="cv-btn">Download my CV</a>
+            </div>
+            <div class="social-icons">
+                <a href="http://linkedin.com/in/hassan-attwa-38908550" target="blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/hassan.abdelalim1" target="blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://mobile.twitter.com/hassanattwa" target="blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://instagram.com/7assan_3ttwa?r=nametag" target="blank"><i class="fab fa-instagram-square"></i></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </section>
-    
-
 
     <section class="cards" id="career">
-        <h2 class="title">Career</h2>
+        <h2 class="title" data-aos="fade-up">Career</h2>
         <div class="content">
-            <div class="card">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon"><i class="fas fa-edit"></i></div>
                 <div class="info">
                     <h3>Intro</h3>
                     <p>Experienced Chemist with a demonstrated history of working in the chemicals industry. Skilled in Water Treatment, Editing, Raw Materials, and Public Relations. Strong research professional with a Bachelor's degree in chemistry focused in Special chemistry from banha university.</p>
                 </div>
             </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-edit"></i></div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon"><i class="fas fa-briefcase"></i></div>
                 <div class="info">
                     <h3>Current Position</h3>
-                    <p> Project Manager at Kuwait certified Lab Co. with four years of experience managing high value private . Proficient at working with team members to achieve project goals and maximize company revenue. Skilled at finding solutions to complex problems as they arise to ensure construction progresses with minimal impact to schedule and budget. Excels at sourcing sub-contractors when necessary and ensuring they perform to company standards.</p>
+                    <p>Project Manager at Kuwait certified Lab Co. with four years of experience managing high value private projects. Proficient at working with team members to achieve project goals and maximize company revenue.</p>
                 </div>
             </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-edit"></i></div>
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class="fas fa-history"></i></div>
                 <div class="info">
                     <h3>Former</h3>
-                    <p>Senior Chemist at Mahmoud Bahman General Trading & Contracting Co. Completed physical, qualitative and quantitative tests,issuing reports and follow up the execution of work orders.</p>
+                    <p>Senior Chemist at Mahmoud Bahman General Trading & Contracting Co. Completed physical, qualitative and quantitative tests, issuing reports and follow up the execution of work orders.</p>
                 </div>
             </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-edit"></i></div>
+            <div class="card" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon"><i class="fas fa-flask"></i></div>
                 <div class="info">
                     <h3>Former</h3>
-                    <p>Junior Chemist at LABOTEAU ceramic factory, doing physical & chemical testing on the green and full burned tiles, inspect the raw materials prior entered to the factory and ensure that it's met the required specification .   </p>
+                    <p>Junior Chemist at LABOTEAU ceramic factory, doing physical & chemical testing on the green and full burned tiles, inspect the raw materials prior entered to the factory.</p>
                 </div>
             </div>
-            
         </div>
     </section>
 
-
-
     <section class="certificates" id="Certificates">
-        <h2 class="title">Certificates</h2>
+        <h2 class="title" data-aos="fade-up">Certificates</h2>
         <div class="content">
-            <div class="card-img">
-                <div class="certificate-image">
-                    <img src="./certificate/ICDL-img.jpeg">
-                 </div>
-                <div class="card-img-info">
-                    <p class="img-cateogery">ICDL Certificate</p>
+            <div class="certificate-gallery">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-image">
+                        <img src="./certificate/ICDL-img.jpeg" alt="ICDL Certificate">
+                    </div>
+                    <div class="card-img-info">
+                        <p class="img-category">ICDL Certificate</p>
+                    </div>
                 </div>
-            </div>
-
-            
-                 <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="200">
                     <div class="icdl-image">
                         <img src="./certificate/ISO17025-img.jpeg">
                     </div>
@@ -94,8 +122,7 @@
                         <p class="img-cateogery">ISO training course</p>
                     </div>
                 </div>
-                
-                <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="300">
                     <div class="icdl-image">
                         <img src="./certificate/Html-img.jpeg">
                     </div>
@@ -103,8 +130,7 @@
                         <p class="img-cateogery">Solo learn HTML Course</p>
                     </div>
                 </div>
-
-                <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="400">
                     <div class="icdl-image">
                         <img src="./certificate/css-img.jpeg">
                     </div>
@@ -112,8 +138,7 @@
                         <p class="img-cateogery">Solo learn CSS Course</p>
                     </div>
                 </div>
-
-                <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="500">
                     <div class="icdl-image">
                         <img src="./certificate/js-img.jpeg">
                     </div>
@@ -121,8 +146,7 @@
                         <p class="img-cateogery">Solo learn JS Course</p>
                     </div>
                 </div>
-
-                <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="600">
                     <div class="icdl-image">
                         <img src="./certificate/php-img.jpeg">
                     </div>
@@ -130,8 +154,7 @@
                         <p class="img-cateogery">Solo learn php Course</p>
                     </div>
                 </div>
-
-            <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="700">
                     <div class="icdl-image">
                         <img src="./certificate/py01-img.jpeg">
                     </div>
@@ -139,11 +162,7 @@
                         <p class="img-cateogery">Solo learn Python course</p>
                     </div>
                 </div>
-
-                
-
-
-                <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="800">
                     <div class="icdl-image">
                         <img src="./certificate/gardurate-img.jpeg">
                     </div>
@@ -151,10 +170,7 @@
                         <p class="img-cateogery">Graduation certificate</p>
                     </div>
                 </div>
-
-                
-
-                <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="900">
                     <div class="icdl-image">
                         <img src="./certificate/ISO9001-img.jpeg">
                     </div>
@@ -162,8 +178,7 @@
                         <p class="img-cateogery">ISO training course</p>
                     </div>
                 </div>
-
-            <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="1000">
                     <div class="icdl-image">
                         <img src="./certificate/Exp-img.jpeg">
                     </div>
@@ -171,8 +186,7 @@
                         <p class="img-cateogery"> Water treatment Project experience  </p>
                     </div>
                 </div>
-
-            <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="1100">
                     <div class="icdl-image">
                         <img src="./certificate/Thank-img.jpg">
                     </div>
@@ -180,8 +194,7 @@
                         <p class="img-cateogery">KCL recognition outstanding 2021</p>
                     </div>
                 </div>
-
-            <div class="card-img">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="1200">
                     <div class="icdl-image">
                         <img src="./certificate/internal audit cert.jpeg">
                     </div>
@@ -189,34 +202,47 @@
                         <p class="img-cateogery">Internal Audit  training Certificate</p>
                     </div>
                 </div>
-            
-
-            
+            </div>
         </div>
     </section>
 
-
     <section class="contact" id="contacts">
-        <h2 class="title">Let's Work together</h2>
-        <div class="fcontent">
-            <div class="fcard">
-                <div class="icon"><i class="fas fa-phone"></i></i></div>
-                <div class="finfo">
-                    <h3>Phone</h3>
-                    <p> +965 5534 9400 </p>
-                    <p> +965 6701 6524 </p>
+        <h2 class="title" data-aos="fade-up">Let's Work Together</h2>
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <div class="fcard">
+                    <div class="icon"><i class="fas fa-phone"></i></div>
+                    <div class="finfo">
+                        <h3>Phone</h3>
+                        <p>+965 5534 9400</p>
+                        <p>+965 6701 6524</p>
+                    </div>
+                </div>
+                <div class="fcard">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <div class="finfo">
+                        <h3>Email</h3>
+                        <p>Hattwa@outlook.com</p>
+                        <p>Hattwa@kwtcl.com</p>
+                    </div>
                 </div>
             </div>
-            <div class="fcard">
-                <div class="icon"><i class="fas fa-envelope"></i></i></div>
-                <div class="finfo">
-                    <h3>Email</h3>
-                    <p>Hattwa@outlook.com</p>
-                    <p>Hattwa@kwtcl.com</p>
+            <form class="contact-form" data-aos="fade-left" id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Name</label>
                 </div>
-            </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
-
     </section>
 
     <footer class="footer">
@@ -229,5 +255,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
