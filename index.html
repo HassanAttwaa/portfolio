@@ -11,7 +11,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Add your EmailJS public key here
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
         })();
     </script>
     <title>Hassan Attwa</title>
@@ -216,7 +216,7 @@
                         <h3>Phone</h3>
                         <p>+965 5534 9400</p>
                         <p>+965 6701 6524</p>
-                         <p>+2 0100 3374 643</p>
+                        <p>+20 100 337 4643</p>
                     </div>
                 </div>
                 <div class="fcard">
@@ -228,7 +228,10 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form" data-aos="fade-left" id="contact-form">
+            <form class="contact-form" data-aos="fade-left" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="90191b3c-4706-4e1c-b700-9629d4fe7812">
+                <input type="hidden" name="subject" value="New Contact Form Submission">
+                
                 <div class="form-group">
                     <input type="text" id="name" name="name" required>
                     <label for="name">Name</label>
@@ -238,9 +241,14 @@
                     <label for="email">Email</label>
                 </div>
                 <div class="form-group">
+                    <input type="text" id="subject" name="subject" required>
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="form-group">
                     <textarea id="message" name="message" required></textarea>
                     <label for="message">Message</label>
                 </div>
+                <div id="form-status" class="form-status"></div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
