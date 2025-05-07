@@ -73,7 +73,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form Validation and Submission
 const contactForm = document.querySelector('.contact-form');
 const formInputs = contactForm.querySelectorAll('input, textarea');
-const submitBtn = contactForm.querySelector('.submit-btn');
 
 formInputs.forEach(input => {
     input.addEventListener('focus', () => {
@@ -102,37 +101,44 @@ contactForm.addEventListener('submit', async (e) => {
     });
 
     if (isValid) {
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const formStatus = document.getElementById('form-status');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
+        formStatus.textContent = '';
+        formStatus.className = 'form-status';
 
         try {
-            const templateParams = {
-                from_name: contactForm.querySelector('#name').value,
-                from_email: contactForm.querySelector('#email').value,
-                message: contactForm.querySelector('#message').value,
-                to_name: 'Hassan Attwa',
-                to_email: 'hattwa@outlook.com'
-            };
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData
+            });
 
-            await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
+            const result = await response.json();
             
-            // Show success message
-            submitBtn.textContent = 'Message Sent!';
-            contactForm.reset();
-            
-            // Redirect to thank you page
-            setTimeout(() => {
-                window.location.href = 'thanks.html';
-            }, 1500);
+            if (result.success) {
+                formStatus.textContent = 'Message sent successfully!';
+                formStatus.className = 'form-status success';
+                contactForm.reset();
+                formInputs.forEach(input => {
+                    input.parentElement.classList.remove('focused');
+                });
+            } else {
+                throw new Error(result.message || 'Failed to send message');
+            }
         } catch (error) {
-            console.error('Error sending email:', error);
-            submitBtn.textContent = 'Error! Try Again';
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
+            console.error('Error:', error);
+            formStatus.textContent = 'Error sending message. Please try again.';
+            formStatus.className = 'form-status error';
         }
+
+        // Reset button after 2 seconds
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 2000);
     }
 });
 
@@ -213,6 +219,28 @@ style.textContent = `
 
     .form-group.error label {
         color: #ff4444;
+    }
+
+    .form-status {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+        display: none;
+    }
+
+    .form-status.success {
+        display: block;
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .form-status.error {
+        display: block;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
     }
 `;
 document.head.appendChild(style); 
